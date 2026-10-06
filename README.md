@@ -27,7 +27,7 @@ python3 align.py       # alignment tests: exact, 1 mismatch, 1 deletion
 python3 benchmark.py   # speed and correctness vs naive scan
 ```
 
-Needs Python 3 and no external packages. The genome is in `data/sars.fasta`.
+Needs Python 3 and no external packages. The genome is in `downloads/sars.fasta`.
 
 ## Files
 
