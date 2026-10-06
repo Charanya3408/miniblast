@@ -17,7 +17,7 @@ GENOME = read_fasta("data/sars.fasta")
 INDEX = build_index(GENOME)
 COMP = str.maketrans("ACGT", "TGCA")
 MAX_LEN = 500
-MAX_GENOME = 500_000
+MAX_GENOME = 200_000
 CACHE = OrderedDict()
 
 
@@ -117,7 +117,7 @@ def run(query, genome, index):
 
 @app.errorhandler(413)
 def too_large(e):
-    return "File too large. Maximum is 1 MB (500,000 bases).", 413
+    return "File too large. Maximum is 1 MB (200,000 bases).", 413
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -202,7 +202,7 @@ input[type=file]{color:#94a3b8;font-size:.9rem}
 <div class="card"><form method="post" enctype="multipart/form-data">
 <input type="hidden" name="gid" value="{{ gid }}">
 <p class="note">Genome: <b>{{ gname }}</b> ({{ "{:,}".format(glen) }} bp){% if gid != default_id %} &middot; <a href="/">use SARS-CoV-2 instead</a>{% endif %}</p>
-<p class="note">Search your own genome: <input type="file" name="genome" accept=".fasta,.fa,.fna,.txt"><br>FASTA, first record only, max 500,000 bases.</p>
+<p class="note">Search your own genome: <input type="file" name="genome" accept=".fasta,.fa,.fna,.txt"><br>FASTA, first record only, max 200,000 bases.</p>
 <textarea name="query" id="q" placeholder="Paste a DNA sequence (A, C, G, T), 15 to 500 bases. A FASTA header line is fine.">{{ raw }}</textarea>
 <p><button>Search</button>
 {% if sample %}<button type="button" class="alt" onclick='fill({{ sample|tojson }})'>Example</button>
