@@ -21,7 +21,7 @@ def mutate(q):
     return q[:j] + q[j + 1:]
 
 
-trials = 5
+trials = 30
 fast_t = naive_t = agree = 0
 for _ in range(trials):
     pos = random.randrange(0, len(genome) - 100)
