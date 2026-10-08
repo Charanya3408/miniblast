@@ -172,6 +172,10 @@ PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MiniBLAST</title>
+<meta property="og:title" content="MiniBLAST: DNA sequence search">
+<meta property="og:description" content="Seed-and-extend DNA search with Smith-Waterman alignment, 149x faster per query than a full scan. Upload a genome and try it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://miniblast.onrender.com/">
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,sans-serif;background:#0f172a;color:#e2e8f0}
